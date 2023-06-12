@@ -2,7 +2,7 @@ print("WELCOME KO KBC(KAUN BANEGA CROREPATI)".center(90), "\n")
 chk = False
 m =1
 answer_count = 0
-#CREATING THE QUESTION AND ANSWER LIST
+#CREATING THE QUESTION AND ANSWER LIST(There questions in index 0 of every items whereas answers in index 1 of all items with 5 items in total)
 li =[
     ['''A. In which among the following organ, “Bowman’s Capsule” is found?
         1. Liver                   2. Kidney
@@ -26,10 +26,12 @@ print('''You'll be asked five questions and the prize for each of the questions 
     ** For 3rd qn: 20 lakh
     ** For 4th qn: 40 lakh
     ** For 5th qn: 1 crore ''', "\n")
+#Looping through the elements of the list
 for i in range(0, 5):
     print("Question ", m," is:\n", li[i][0], "\n")
-    answer_key = input("Enter your answer(1-4): ")
+    answer_key = input("Enter your answer(1-4): ") #Asking the user to input their answer
     real_answer = li[i][1]
+    # Checking all the required conditions
     if (answer_key == real_answer):
         answer_count+=1
         if(answer_count == 1):
@@ -46,7 +48,7 @@ for i in range(0, 5):
             print("You just won 40 lakh rupees. But, if you don't answer another question you'll lose all you money ")
             check = input("Enter y to continue and n to exit: ").lower()
             if (check != 'y'):
-                chk = True
+                chk = True  #Changing the value of the boolean
                 break
             else:
                 pass
@@ -73,5 +75,6 @@ for i in range(0, 5):
             print()
             print("Sorry, you lost all your money")
     m +=1
+#Loop will break and the program will be directed here if the user presses 'n'
 if(chk):
     print("Congratulations for wining 40 lakh rupees")
