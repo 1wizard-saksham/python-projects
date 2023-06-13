@@ -58,19 +58,19 @@ for i in range(0, 5):
     else:
         if(answer_count < 1):
             print()
-            print("In aggregate, You didn't win anything")
+            print("WRONG ANSWER..... You don't win anything")
             break
         elif(answer_count < 2):
             print()
-            print("In aggregate, You win only 5 lakh rupees")
+            print("WRONG ANSWER.....In aggregate, You win only 5 lakh rupees")
             break
         elif(answer_count < 3):
             print()
-            print("In aggregate, You win only 10 lakh rupees")
+            print("WRONG ANSWER.....In aggregate, You win only 10 lakh rupees")
             break
         elif(answer_count < 4):
             print()
-            print("In aggregate, You win only 20 lakh rupees")
+            print("WRONG ANSWER.....In aggregate, you win only 20 lakh rupees")
         elif(answer_count < 5):
             print()
             print("Sorry, you lost all your money")
