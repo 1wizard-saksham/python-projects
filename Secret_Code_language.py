@@ -1,5 +1,6 @@
 '''
-PROGRAM DESCRIPTION:--  WE CAN CONVERT ACTUAL MESSAGE INTO CODE LANGUAGE UNDERSTANDABLE BY OUR INTIMATES. FURTHERMORE:
+PROGRAM DESCRIPTION:
+      WE CAN CONVERT ACTUAL MESSAGE INTO CODE LANGUAGE UNDERSTANDABLE BY OUR INTIMATES. FURTHERMORE:
 - WE CAN ALSO RECOVER ACTUAL MESSAGE FROM THE SECRET CODE LANGUAGE 
 - TWO PARTS OF THE CODE IS SUMMARIZED AS:-
 
@@ -12,13 +13,13 @@ B) DECODING:
 -->else, remove 3 random characters from the starting and end. Now remove te last letter and append it to the first
 '''
 while True:
+    final_msg =[]
     code_decode = input("Enter c to code and d to decode: ").lower()
     if(code_decode == 'c'):        # HERE, WE CONVERT USER INPUT INTO A SECRET CODE LANGUAGE
         a = input("Enter the message to be conveyed: ")
         list_msg = a.split(" ")
         req_string = ""
         req_msg = ""
-        final_msg =[]
         for i in range(0, len(list_msg)):
             c = list_msg[i]
             if (len(c)>=3):
@@ -38,14 +39,13 @@ while True:
 
     elif(code_decode == 'd'):                 #THIS IS FOR THE PART WHERE WE RECOVER ACTUAL MESSAGE FROM THE SECRET CODE LANGUAGE
         a = input("Enter the message to be decoded: ")
-        list_msg = a.split(" ")
+        list_msg1 = a.split(" ")
         req_string = ""
         req_msg = ""
-        final_msg =[]
-        for i in range(0, len(list_msg)):
-            c = list_msg[i]
+        for i in range(0, len(list_msg1)):
+            c = list_msg1[i]
             if(len(c)>=3):
-                req_string = a[3:-3]                        #REMOVING FIRST AND LAST 3 RANDOM CHARACTERS
+                req_string = c[3:-3]                        #REMOVING FIRST AND LAST 3 RANDOM CHARACTERS
                 req_msg = req_string[-1]+req_string[:-1]    #APPENDING LAST CHARACTER TO THE FIRST 
                 final_msg.append(req_msg)
             elif(len(c)< 3):
