@@ -12,6 +12,9 @@ B) DECODING:
 -->if the word contains less than 3 characters, reverse it
 -->else, remove 3 random characters from the starting and end. Now remove te last letter and append it to the first
 '''
+
+import string
+import random
 while True:
     final_msg =[]
     code_decode = input("Enter c to code and d to decode: ").lower()
@@ -24,7 +27,8 @@ while True:
             c = list_msg[i]
             if (len(c)>=3):
                 req_string = c[1:len(c)]+ c[0]           # APPENDING FIRST CHARACTER AT THE LAST OF THE STRING
-                req_msg = 'mjk' + req_string + 'ijk'     # APPENDING 3 RANDOM CHARACTERS AT THE FIRST AND THE LAST OF STRING
+                req_msg = ''.join(random.choices(string.ascii_letters, k=3)) + req_string + ''.join(random.choices(string.
+                ascii_letters, k=3))     # APPENDING 3 RANDOM CHARACTERS AT THE FIRST AND THE LAST OF STRING
                 final_msg.append(req_msg)                # EACH WORD OF THE SENTENCE ARE BEING ADDED TO THE LIST ONE BY ONE
             elif(len(c)<3):
                 req_string = c[::-1]                        # REVERSING THE STRING
@@ -32,11 +36,10 @@ while True:
         print(" ".join(final_msg))                          # OBTAINING STRING FROM THE LIST
         print()
         try_again = input("PRESS 'y' to try again: ").lower()
-        if(try_again == 'y'):
-            pass
-        else:
+        if(try_again != 'y'):
             break
-
+        print()
+    
     elif(code_decode == 'd'):                 #THIS IS FOR THE PART WHERE WE RECOVER ACTUAL MESSAGE FROM THE SECRET CODE LANGUAGE
         a = input("Enter the message to be decoded: ")
         list_msg1 = a.split(" ")
@@ -54,16 +57,13 @@ while True:
         print(" ".join(final_msg))                          
         print()
         try_again = input("PRESS 'y' to try again: ").lower()
-        if(try_again == 'y'):
-            pass
-        else:
+        if(try_again != 'y'):
             break
-  
+        print()
+     
     else:       #THIS STATEMENT IS EXECUTED IF ANY INVALID INPUT IS GIVEN BY THE USER
         print("Invalid input. Please enter only 'c' or 'd'")
-        print("\n")
+        print()
         try_again = input("PRESS 'y' to try again: ").lower()
-        if(try_again == 'y'):
-            pass
-        else:
+        if(try_again != 'y'):
             break
