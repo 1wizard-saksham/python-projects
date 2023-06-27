@@ -4,6 +4,10 @@ def teamdiv(li):
     Upon running this function by passing a suitable arguement, you can divide an even group of people into random 2 groups.
     '''
     import random
+    test = "".join(li)
+    if test.isalnum() or test.isnumeric():
+        print("Please enter non-numeric values")
+        return
     if (type(li) is list):
         if len(li) % 2 == 0:
             copy_list = li.copy()
